@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="Enter path to be indexed in AWS CloudSearch"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="AWS CloudSearch Indexing"
+    href="/apps/awsCSConnector/components/content/AWSIndex.html"
+    icon="fileSpace"
+    id="Aws-Search-index"
+    target="_blank"/>

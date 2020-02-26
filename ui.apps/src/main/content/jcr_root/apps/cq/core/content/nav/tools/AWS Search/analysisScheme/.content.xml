@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="AnalysisScheme"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="AWS CloudSearch AnalysisScheme"
+    href="/apps/awsCSConnector/components/content/analysisscheme.html"
+    icon="fileSpace"
+    id="Aws-Search-AnalysisScheme"
+    target="_blank"/>

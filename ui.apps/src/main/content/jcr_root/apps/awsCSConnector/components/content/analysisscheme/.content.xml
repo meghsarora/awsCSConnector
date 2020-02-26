@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="AWSSearch Synonyms"
+        sling:resourceType="granite/ui/components/shell/page"
+        consoleId="aws-search-synonyms">
+        <head jcr:primaryType="nt:unstructured">
+            <clientlibs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/includeclientlibs"
+                categories="[granite.ui.coral.foundation,awsCSConnector.base]"/>
+        </head>
+        <title
+            jcr:primaryType="nt:unstructured"
+            jcr:title="AWS CloudSearch Analysis Scheme"
+            sling:resourceType="granite/ui/components/shell/title"/>
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            margin="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+                <columns
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                    margin="{Boolean}true">
+                    <items jcr:primaryType="nt:unstructured">
+                        <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                            <items jcr:primaryType="nt:unstructured">
+                                <container
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    margin="{Boolean}true">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            granite:class="flexWrap"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            margin="{Boolean}true">
+                                            <items
+                                                granite:class="analysisscheme1"
+                                                jcr:primaryType="nt:unstructured">
+                                                <analysisList
+                                                    granite:class="analysisscheme1"
+                                                    granite:id="analysisList"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/select"
+                                                    fieldLabel="Select the Analysis Scheme"
+                                                    name="analysisList">
+                                                    <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="/bin/aws/analysisschemelist"/>
+                                                </analysisList>
+                                                <editButton
+                                                    granite:id="btnEditScheme"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/button"
+                                                    text="Edit"
+                                                    type="submit"/>
+                                                <deleteButton
+                                                    granite:id="deleteButtonScheme"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/button"
+                                                    text="Delete"
+                                                    type="submit"/>
+                                            </items>
+                                        </column>
+                                        <addButton
+                                            granite:id="addNewScheme"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/button"
+                                            text="Add Analysis Scheme"
+                                            type="submit"/>
+                                        <resultMessage
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/field"
+                                            fieldLabel=""
+                                            wrapperClass="result"/>
+                                        <schemeName
+                                            granite:id="schemeName"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Analysis Scheme Name"
+                                            name="schemeName"
+                                            required="{Boolean}true"
+                                            validation="scheme-name"
+                                            value=""/>
+                                        <language
+                                            granite:id="language"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Analysis Scheme Language"
+                                            name="schemeName"
+                                            value=""/>
+                                        <languageList
+                                            granite:id="languageList"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="/libs/granite/ui/components/coral/foundation/form/select"
+                                            fieldLabel="Select the Analysis Scheme Language"
+                                            name="languageList"
+                                            required="true"
+                                            wrapperClass="languageList">
+                                            <datasource
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/bin/analysisschemelanguagelist"/>
+                                        </languageList>
+                                        <tabs
+                                            granite:id="tabs"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="/libs/granite/ui/components/coral/foundation/tabs"
+                                            orientation="horizontal">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <stopwords
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Stopwords"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <well
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/well"
+                                                            margin="{Boolean}true">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <container
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form"
+                                                                    enctype="multipart/form-data"
+                                                                    foundationForm="{Boolean}true"
+                                                                    loadingMask="{Boolean}true"
+                                                                    margin="{Boolean}true"
+                                                                    maximized="{Boolean}true"
+                                                                    style="vertical">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <stopwordsTextBox
+                                                                            granite:id="stopwordsTextBox"
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textarea"
+                                                                            fieldLabel="Stopwords"
+                                                                            name="stopwords"
+                                                                            value=""/>
+                                                                    </items>
+                                                                </container>
+                                                            </items>
+                                                        </well>
+                                                    </items>
+                                                </stopwords>
+                                                <synonyms
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Synonyms"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <well
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/well"
+                                                            margin="{Boolean}true">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <container
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form"
+                                                                    enctype="multipart/form-data"
+                                                                    foundationForm="{Boolean}true"
+                                                                    loadingMask="{Boolean}true"
+                                                                    margin="{Boolean}true"
+                                                                    maximized="{Boolean}true"
+                                                                    style="vertical">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <container
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form"
+                                                                            foundationForm="{Boolean}true"
+                                                                            loadingMask="{Boolean}true"
+                                                                            margin="{Boolean}true"
+                                                                            maximized="{Boolean}true"
+                                                                            style="vertical">
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <addTerm
+                                                                                    granite:id="aliasTextField"
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldLabel="Add Term: "
+                                                                                    name="Alias"
+                                                                                    value=""/>
+                                                                                <content
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="/apps/awsCSConnector/components/main"/>
+                                                                                <aliasTextBox
+                                                                                    granite:id="aliasTextbox"
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textarea"
+                                                                                    fieldLabel="Current Synonym Aliases:"
+                                                                                    name="Alias"
+                                                                                    value=""/>
+                                                                            </items>
+                                                                        </container>
+                                                                        <Copy_x0020_of_x0020_container
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form"
+                                                                            foundationForm="{Boolean}true"
+                                                                            loadingMask="{Boolean}true"
+                                                                            margin="{Boolean}true"
+                                                                            maximized="{Boolean}true"
+                                                                            style="vertical">
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <content
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="/apps/awsCSConnector/components/main"/>
+                                                                                <groupsTextBox
+                                                                                    granite:id="groupsTextBox"
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textarea"
+                                                                                    fieldLabel="Group"
+                                                                                    name="Group"
+                                                                                    value=""/>
+                                                                            </items>
+                                                                        </Copy_x0020_of_x0020_container>
+                                                                    </items>
+                                                                </container>
+                                                            </items>
+                                                        </well>
+                                                    </items>
+                                                </synonyms>
+                                            </items>
+                                        </tabs>
+                                        <backButton
+                                            granite:id="backButton"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/button"
+                                            text="Back"
+                                            type="submit"/>
+                                        <saveSynonymButton
+                                            granite:id="saveButton"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/button"
+                                            text="Save"
+                                            type="submit"/>
+                                        <updateButton
+                                            granite:id="updateButton"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/button"
+                                            text="Update"
+                                            type="submit"/>
+                                    </items>
+                                </container>
+                            </items>
+                        </column>
+                    </items>
+                </columns>
+            </items>
+        </content>
+    </jcr:content>
+</jcr:root>

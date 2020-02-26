@@ -1,0 +1,80 @@
+.loaderOverlay {background: rgba(0,0,0,0.7); width: 100%;  height: 100%; position: fixed;top: 0; left: 0; z-index: 99999; display: none;}
+.loaderOverlay .loaderBox {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    margin: auto;
+    border: 8px solid #e5e5e5;
+    border-radius: 50%;
+    border-top: 8px solid #1e1e1e;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.result p{position:relative;}
+.result p span{display:none;}
+.result p.fail{color: #ed1b35;}
+.result p.success{color: #4a934a;}
+.result p.fail span:before{
+    content: "\f057";
+    position: absolute;
+    font-family: FontAwesome;
+    left: 0;
+    font-size: 24px;
+    line-height: 20px;
+}
+.result p.success span:before{
+    content: "\f058";
+    position: absolute;
+    font-family: FontAwesome;
+    left: 0;
+    font-size: 24px;
+    line-height: 20px;
+}
+#schemeName{margin: -10px 0px 15px 0px;}
+.foundation-layout-util-vmargin form{margin-top:0;}   
+.coral3-Tab.is-selected:focus{color: #323232; border-color: #323232;text-decoration: none;}
+.coral-Form-fieldlabel{margin-right:10px;}
+label[for='schemeName']{min-width:200px; float:left;}
+
+  
+.flexWrap{display: flex;} 
+#btnEditScheme{margin-left:20px;}
+#deleteButtonScheme{margin-left:9px;}
+#addNewScheme{margin-left:156px;}
+label[for="coral-id-0"] {position: relative;top: 10px;}  
+#fileUploadForm label[for="coral-id-0"] {top: 0px;}  
+
+input#schemeName:not([disabled]){margin-left:8px;}          
+
+input#language,input#schemeName{color: #323232; !important;-webkit-text-fill-color: #323232;}                
+
+input#language{margin-left: 58px;}  
+
+
+
+
+
